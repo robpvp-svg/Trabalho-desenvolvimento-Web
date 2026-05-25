@@ -9,7 +9,6 @@ const modalClose = document.getElementById('modal-close');
 const yearEl = document.getElementById('year');
 const openCvBtn = document.getElementById('open-cv');
 
-// ano rodapé
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 navToggle && navToggle.addEventListener('click', () => {
@@ -61,7 +60,7 @@ contactForm && contactForm.addEventListener('submit', (e) => {
   }
 
   
-  contactForm.reset(); // simulando envio
+  contactForm.reset();
   if (modal) {
     modal.setAttribute('aria-hidden','false');
   }
@@ -69,7 +68,6 @@ contactForm && contactForm.addEventListener('submit', (e) => {
   feedbackEl.style.color = 'var(--muted)';
 });
 
-// reset
 resetBtn && resetBtn.addEventListener('click', () => {
   if (!contactForm) return;
   contactForm.reset();
@@ -91,7 +89,6 @@ const obs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      // optionally unobserve to run once
       obs.unobserve(entry.target);
     }
   });
